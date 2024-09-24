@@ -1,0 +1,39 @@
+pipeline {
+    agent any
+    stages 
+    {
+        stage('code checkout') 
+        {
+            steps 
+            {
+                git 'https://github.com/CHRISTYLE06/IGP-2024.git'
+               
+            }
+        }
+        stage('code compile') 
+        {
+            steps 
+            {
+                sh 'mvn compile'
+            }
+        }
+         stage('test') 
+         {
+            steps 
+            {
+                sh 'mvn test'
+            }
+        }
+        
+        stage('Build') 
+        {
+            steps 
+            {
+                script {
+                sh 'mvn package'
+                }
+            }
+     }
+    }
+
+}
