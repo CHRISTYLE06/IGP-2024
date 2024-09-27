@@ -1,3 +1,3 @@
-FROM tomcat:base 
-COPY XYZtecnologies-1.0.war /usr/tomcat/webapp/
+FROM tomcat:latest 
+COPY XYZtecnologies-1.0.war /usr/tomcat/webapps/
 CMD ["catalina.sh", "run"]
